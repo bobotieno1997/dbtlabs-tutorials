@@ -1,4 +1,4 @@
-{{ %docs stg_location% }}
+{% docs stg_location %}
 
 | City           | Tax Rate |
 |----------------|----------|
@@ -9,4 +9,4 @@
 | New Orleans    | 0.04     |
 | Los Angeles    | 0.08     |
 
-{{ %enddocs% }}
+{% enddocs %}
