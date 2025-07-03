@@ -7,8 +7,20 @@ sources:
     tables:
       - name: raw_customers
         description: One record per person who has purchased one or more items
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
       - name: raw_orders
         description: One record per order (consisting of one or more order items)
+        freshness: 
+          error_after:
+            count: 2
+            period: day
+          warn_after:
+            count: 1
+            period: day
         loaded_at_field: ordered_at
       - name: raw_items
         description: Items included in an order

@@ -8,6 +8,14 @@ models:
           - not_null
           - unique
 
+      - name : location_name
+        tests: 
+          - accepted_values:
+              values: ['Chicago','Brooklyn','Los Angeles','New Orleans','San Francisco','Philadelphia']
+
+      - name: tax_rate
+        description: " {{ doc('stg_location') }}"
+
 unit_tests:
   - name: test_does_location_opened_at_trunc_to_date
     description: "Check that opened_at timestamp is properly truncated to a date."
